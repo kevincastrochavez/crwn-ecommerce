@@ -7,11 +7,14 @@ import Homepage from "./pages/homepage/Homepage";
 import ShopPage from "./pages/shop/ShopPage";
 import Header from "./components/header/header";
 import SignInAndSignUp from "./pages/sign-in-and-sign-up/sign-in-and-sign-up";
+
 import { auth, createUserProfileDocument } from "./firebase/firebase-utils";
+
 import { setCurrentUser } from "./redux/user/userActions";
 import { selectCurrentUser } from "./redux/user/userSelectors";
 
 import "./App.css";
+import CheckoutPage from "./pages/checkout/checkout";
 
 class App extends Component {
   unsuscribeFromAuth = null;
@@ -46,6 +49,7 @@ class App extends Component {
         <Switch>
           <Route exact path="/" component={Homepage} />
           <Route path="/shop" component={ShopPage} />
+          <Route exact path="/checkout" component={CheckoutPage} />
           <Route
             exact
             path="/signIn"
