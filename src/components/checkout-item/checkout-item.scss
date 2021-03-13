@@ -27,3 +27,9 @@
 .quantity {
   padding-left: 20px;
 }
+
+.remove-button {
+  &:hover {
+    cursor: pointer;
+  }
+}
