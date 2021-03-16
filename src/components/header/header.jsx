@@ -9,37 +9,36 @@ import CartDropdown from "../cart-dropdown/cart-dropdown";
 import CartIcon from "../cart-icon/cart-icon";
 import { selectCartHidden } from "../../redux/cart/cartSelectors";
 import { selectCurrentUser } from "../../redux/user/userSelectors";
+import {
+  HeaderContainer,
+  LogoContainer,
+  OptionDiv,
+  OptionLink,
+  OptionsContainer,
+} from "./headerStyles";
 
 import "./header.scss";
 
 function Header({ currentUser, hidden }) {
   return (
-    <div className="header">
-      <Link to="/" className="logo-container">
+    <HeaderContainer>
+      <LogoContainer to="/">
         <Logo className="logo" />
-      </Link>
+      </LogoContainer>
 
-      <div className="options">
-        <Link className="option" to="/shop">
-          SHOP
-        </Link>
-        <Link className="option" to="/contact">
-          CONTACT
-        </Link>
+      <OptionsContainer>
+        <OptionLink to="/shop">SHOP</OptionLink>
+        <OptionLink to="/contact">CONTACT</OptionLink>
         {currentUser ? (
-          <div className="option" onClick={() => auth.signOut()}>
-            SIGN OUT
-          </div>
+          <OptionDiv onClick={() => auth.signOut()}>SIGN OUT</OptionDiv>
         ) : (
-          <Link className="option" to="/signIn">
-            SIGN IN
-          </Link>
+          <OptionLink to="/signIn">SIGN IN</OptionLink>
         )}
         <CartIcon />
-      </div>
+      </OptionsContainer>
 
       {hidden ? null : <CartDropdown />}
-    </div>
+    </HeaderContainer>
   );
 }
 
