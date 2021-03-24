@@ -9,6 +9,10 @@ import { fetchCollectionsStart } from "../../redux/shop/shopActions";
 const ShopPage = ({ match, fetchCollectionsStart }) => {
   useEffect(() => {
     fetchCollectionsStart();
+
+    return () => {
+      fetchCollectionsStart();
+    };
   }, [fetchCollectionsStart]);
 
   return (
