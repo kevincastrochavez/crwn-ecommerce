@@ -1,11 +1,13 @@
 import React from "react";
 import StripeCheckout from "react-stripe-checkout";
 import axios from "axios";
+import { useHistory } from "react-router-dom";
 
 function StripeButton({ price }) {
   const priceForStripe = price * 100;
   const publishableKey =
     "pk_test_51IVggKIZeBxF4eRBuqPYraSarhQeTxFBwNAv5Dyx08g6c7BoLauh10ygmiguQHiCoqeN8G1Wtom9MDTdzUALBOCM00KO6nob8u";
+  const history = useHistory();
 
   const onToken = (token) => {
     axios({
@@ -17,7 +19,8 @@ function StripeButton({ price }) {
       },
     })
       .then((response) => {
-        alert("Payment Successful");
+        alert("We have received your payment successfully");
+        history.push("/shop");
       })
       .catch((error) => {
         console.log(`Payment error: ${JSON.parse(error)}`);
