@@ -34,9 +34,20 @@ const googleSignInStyles = css`
   }
 `;
 
+const signUp = css`
+  width: 100%;
+  background-color: black;
+  color: white;
+  border: none;
+`;
+
 const getButtonStyles = (props) => {
   if (props.isGoogleSignIn) {
     return googleSignInStyles;
+  }
+
+  if (props.signUp) {
+    return signUp;
   }
 
   return props.inverted ? invertedButtonStyles : buttonStyles;

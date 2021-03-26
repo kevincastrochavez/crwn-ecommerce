@@ -8,7 +8,11 @@ import {
 import CustomButton from "../custom-button/custom-button";
 import FormInput from "../form-input/form-input";
 
-import "./sign-in.scss";
+import {
+  SignInContainer,
+  SignInTitle,
+  ButtonsBarContainer,
+} from "./sign-inStyles";
 
 const SignIn = ({ emailSignInStart, googleSignInStart }) => {
   const [userCredentials, setUserCredentials] = useState({
@@ -31,8 +35,8 @@ const SignIn = ({ emailSignInStart, googleSignInStart }) => {
   };
 
   return (
-    <div className="sign-in">
-      <h2 className="title">I already have an account</h2>
+    <SignInContainer>
+      <SignInTitle>I already have an account</SignInTitle>
       <span>Sign in with your email and password</span>
 
       <form onSubmit={handleSubmit}>
@@ -52,8 +56,8 @@ const SignIn = ({ emailSignInStart, googleSignInStart }) => {
           required
           label="Password"
         />
-        <div className="buttons">
-          <CustomButton type="submit">Sign In</CustomButton>
+        <ButtonsBarContainer>
+          <CustomButton type="submit"> Sign In </CustomButton>
           <CustomButton
             type="button"
             onClick={googleSignInStart}
@@ -61,9 +65,9 @@ const SignIn = ({ emailSignInStart, googleSignInStart }) => {
           >
             Sign in with Google
           </CustomButton>
-        </div>
+        </ButtonsBarContainer>
       </form>
-    </div>
+    </SignInContainer>
   );
 };
 

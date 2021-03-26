@@ -1,11 +1,11 @@
-import React, { Component, useState } from "react";
+import React, { useState } from "react";
+import { connect } from "react-redux";
 
 import FormInput from "../form-input/form-input";
 import CustomButton from "../custom-button/custom-button";
 import { signUpStart } from "../../redux/user/userActions";
 
-import "./sign-up.scss";
-import { connect } from "react-redux";
+import { SignUpContainer, SignUpTitle } from "./sign-upStyles";
 
 const SignUp = ({ signUpStart }) => {
   const [userCredentials, setUserCredentials] = useState({
@@ -35,8 +35,8 @@ const SignUp = ({ signUpStart }) => {
   };
 
   return (
-    <div className="sign-up">
-      <h2 className="title">I do not have an account</h2>
+    <SignUpContainer>
+      <SignUpTitle>I do not have a account</SignUpTitle>
       <span>Sign up with your email and password</span>
       <form className="sign-up-form" onSubmit={handleSubmit}>
         <FormInput
@@ -71,9 +71,11 @@ const SignUp = ({ signUpStart }) => {
           label="Confirm Password"
           required
         />
-        <CustomButton type="submit">SIGN UP</CustomButton>
+        <CustomButton signUp type="submit">
+          SIGN UP
+        </CustomButton>
       </form>
-    </div>
+    </SignUpContainer>
   );
 };
 
