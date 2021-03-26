@@ -7,6 +7,7 @@ export const CollectionPreviewContainer = styled.div`
 
   @media screen and (max-width: 800px) {
     align-items: center;
+    padding: 10px;
   }
 `;
 
@@ -25,6 +26,7 @@ export const PreviewContainer = styled.div`
   justify-content: space-between;
 
   @media screen and (max-width: 800px) {
+    width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 15px;
