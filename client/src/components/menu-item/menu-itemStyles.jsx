@@ -21,12 +21,15 @@ export const MenuItemContainer = styled.div`
       opacity: 0.9;
     }
   }
+
   &:first-child {
     margin-right: 7.5px;
   }
+
   &:last-child {
     margin-left: 7.5px;
   }
+
   @media screen and (max-width: 800px) {
     height: 200px;
   }
