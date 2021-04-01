@@ -6,7 +6,8 @@ import { PersistGate } from "redux-persist/integration/react";
 
 import App from "./App";
 import { store, persistor } from "./redux/store";
-import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
+// import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
+import * as serviceWorker from "./service-worker";
 import reportWebVitals from "./reportWebVitals";
 
 import "./index.css";
@@ -24,6 +25,7 @@ ReactDOM.render(
   document.getElementById("root")
 );
 
-serviceWorkerRegistration.unregister();
+serviceWorker.register();
+// serviceWorkerRegistration.unregister();
 
 reportWebVitals();
